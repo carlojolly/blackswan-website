@@ -44,7 +44,7 @@ export function SmoothScroll() {
       ) as HTMLAnchorElement | null;
       if (!link || link.target === "_blank") return;
 
-      // Nav anchors are written as "/#thesis" so they also work from other
+      // Nav anchors are written as "/#divisions" so they also work from other
       // routes. Only intercept when the link points at this same page.
       let url: URL;
       try {

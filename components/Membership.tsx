@@ -11,7 +11,7 @@ export function Membership() {
   return (
     <Band tone="dark" id="membership" className="py-section">
       <Shell>
-        <SectionRule label={m.eyebrow} index="03" total="03" />
+        <SectionRule label={m.eyebrow} />
 
         <Reveal className="mt-16 max-w-narrow">
           <h2 className="font-display text-d2 text-heading">{m.heading}</h2>

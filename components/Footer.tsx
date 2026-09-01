@@ -9,7 +9,7 @@ const f = site.footer;
 
 export function Footer() {
   return (
-    <Band tone="dark" as="footer" className="pb-10 pt-24">
+    <Band tone="dark" as="footer" id="contact" className="pb-10 pt-24">
       <Shell>
         <div className="grid gap-12 border-t border-rule pt-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">

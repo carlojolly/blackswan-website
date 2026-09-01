@@ -21,16 +21,6 @@ export const site = {
     ],
   },
 
-  thesis: {
-    eyebrow: "Thesis",
-    heading: "A price is a probability",
-    paragraphs: [
-      "A prediction market turns a question into a price. When people with something at stake disagree about whether an event will happen, the price they settle on behaves as a probability, and it moves as evidence arrives.",
-      "We use that mechanism as a method. It forces a view into a number, which makes it testable, and it rewards calibration over conviction: a forecaster who says seventy per cent should be right seventy per cent of the time.",
-      "Nobody checks most analysis against what happened. Every forecast we publish carries a resolution date and a record of who was right.",
-    ],
-  },
-
   divisionsIntro: {
     eyebrow: "Divisions",
     heading: "Five divisions, one method",
@@ -49,8 +39,8 @@ export const site = {
         body: "Every member publishes a probability each week with the reasoning written underneath it.",
       },
       {
-        title: "Internal markets",
-        body: "Members trade the society's own markets against each other, which is where disagreement gets expensive.",
+        title: "Market mechanics",
+        body: "We work through how these markets function, from how a contract resolves to where the price gets it wrong.",
       },
       {
         title: "Research notes",
@@ -58,7 +48,7 @@ export const site = {
       },
       {
         title: "Competitions",
-        body: "We enter external forecasting competitions as a team and score ourselves against the field.",
+        body: "We score and rank every member's calls, so who forecasts best is a matter of record rather than opinion.",
       },
     ],
     applicationsTitle: "Applications",
@@ -82,26 +72,27 @@ export const site = {
       {
         label: "Instagram",
         icon: "instagram",
-        href: "{{PLACEHOLDER: Instagram URL}}",
+        href: "https://www.instagram.com/blackswanstudentsociety/",
       },
       {
         label: "LinkedIn",
         icon: "linkedin",
-        href: "{{PLACEHOLDER: LinkedIn URL}}",
+        href: "https://www.linkedin.com/company/black-swan-student-society/",
       },
       {
         label: "Email",
         icon: "mail",
-        href: "mailto:{{PLACEHOLDER: contact email}}",
+        href: "mailto:as.blackswan@unibocconi.it",
       },
     ],
     copyright: "© 2026 Black Swan Student Society",
   },
 
   nav: [
-    { label: "Thesis", href: "/#thesis" },
     { label: "Divisions", href: "/#divisions" },
     { label: "Membership", href: "/#membership" },
     { label: "Board", href: "/board" },
   ],
+
+  contact: { label: "Contact us", href: "/#contact" },
 } as const;

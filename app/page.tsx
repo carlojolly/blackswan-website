@@ -6,7 +6,6 @@ import { MotionProvider } from "@/components/MotionProvider";
 import { Nav } from "@/components/Nav";
 import { Origin } from "@/components/Origin";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { Thesis } from "@/components/Thesis";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Origin />
-        <Thesis />
         <Divisions />
         <Membership />
       </main>

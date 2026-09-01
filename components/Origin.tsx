@@ -4,9 +4,9 @@ import { SectionRule } from "./SectionRule";
 import { stagger } from "@/lib/motion";
 import { site } from "@/content/site";
 
-/** Sits between the hero and the thesis to answer the question the name
-    invites. Deliberately unnumbered and set at a smaller heading size so it
-    reads as a preamble rather than competing with the three main sections. */
+/** Sits directly below the hero to answer the question the name invites,
+    at a smaller heading size so it reads as a preamble rather than
+    competing with the sections beneath it. */
 export function Origin() {
   return (
     <Band tone="dark" id="origin" className="py-section">

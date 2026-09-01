@@ -9,11 +9,7 @@ export function Divisions() {
   return (
     <Band tone="paper" id="divisions" className="py-section">
       <Shell>
-        <SectionRule
-          label={site.divisionsIntro.eyebrow}
-          index="02"
-          total="03"
-        />
+        <SectionRule label={site.divisionsIntro.eyebrow} />
 
         <Reveal className="mt-16 max-w-narrow">
           <h2 className="font-display text-d2 text-heading">

@@ -49,6 +49,14 @@ export function Nav() {
                 </NavLink>
               </li>
             ))}
+            <li>
+              <NavLink
+                href={site.contact.href}
+                className="nav-link inline-flex items-center border border-rule-strong px-4 py-2.5 font-mono text-label uppercase text-muted transition-micro hover:border-accent hover:text-heading"
+              >
+                {site.contact.label}
+              </NavLink>
+            </li>
           </ul>
 
           <button
@@ -80,6 +88,15 @@ export function Nav() {
                 </NavLink>
               </li>
             ))}
+            <li>
+              <NavLink
+                href={site.contact.href}
+                onClick={() => setOpen(false)}
+                className="block py-4 font-display text-d4 text-heading"
+              >
+                {site.contact.label}
+              </NavLink>
+            </li>
           </ul>
         </div>
       )}
