@@ -32,8 +32,8 @@ export const divisions: Division[] = [
     id: "cross-domain",
     index: "03",
     name: "Cross-Domain",
-    remit: "We take the questions that refuse to sit inside one discipline, across crypto, sports, private markets and whatever the week is actually arguing about.",
-    scope: ["Crypto", "Sports", "Private markets", "Trending"],
+    remit: "We take the questions that refuse to sit inside one discipline, across crypto, private markets and whatever the week is actually arguing about.",
+    scope: ["Crypto", "Private markets", "Trending"],
     example: { question: "Anthropic's IPO values it above $2tn", probability: "0.41" },
   },
   {

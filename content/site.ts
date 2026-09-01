@@ -12,6 +12,15 @@ export const site = {
     link: { label: "How membership works", href: "#membership" },
   },
 
+  origin: {
+    eyebrow: "The name",
+    heading: "Why Black Swan",
+    paragraphs: [
+      "The name comes from Nassim Nicholas Taleb's 2007 book, The Black Swan: The Impact of the Highly Improbable. Taleb, a former options trader, used the term for the rare events that decide outcomes and that everyone explains away afterwards.",
+      "That is what we work on. A prediction market forces you to put a number on the unlikely thing instead of ignoring it, and then holds you to that number when the question resolves.",
+    ],
+  },
+
   thesis: {
     eyebrow: "Thesis",
     heading: "A price is a probability",
@@ -60,9 +69,8 @@ export const site = {
   },
 
   board: {
-    eyebrow: "Board",
-    heading: "Who runs it",
-    line: "The society is run by a board of ten: a president, a vice president, a head of investment research, and heads for each division.",
+    heading: "The board",
+    line: "The society is run by a board of thirteen: a president and vice president, a head of investment research, heads for each division, and heads of media and operations.",
     note: "Photographs are on the way. Until then each seat carries its own calibration curve.",
   },
 
