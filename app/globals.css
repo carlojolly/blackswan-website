@@ -183,13 +183,6 @@ body {
    Focus, 3:1 against both grounds
    ============================================================ */
 
-/* A hash landing from another route, or with JS off, is a native jump that
-   ignores the sticky nav. This keeps the section clear of it. */
-section[id],
-[id="top"] {
-  scroll-margin-top: var(--spacing-nav);
-}
-
 /* Anchor targets receive focus after a scroll, but only keyboard users
    should see a ring on them. */
 section:focus,

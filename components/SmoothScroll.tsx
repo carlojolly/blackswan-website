@@ -64,15 +64,15 @@ export function SmoothScroll() {
       event.preventDefault();
       cancel();
 
-      const navHeight =
-        document.querySelector("header")?.getBoundingClientRect().height ?? 0;
+      // Land the section's top edge at the top of the viewport, not below the
+      // nav. Offsetting by the nav height left the bar hanging over the band
+      // above, so arriving at a dark section still showed the light band
+      // behind the nav. Every band carries more top padding than the nav is
+      // tall, so nothing gets hidden underneath it.
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       const destination = Math.max(
         0,
-        Math.min(
-          maxScroll,
-          target.getBoundingClientRect().top + window.scrollY - navHeight
-        )
+        Math.min(maxScroll, target.getBoundingClientRect().top + window.scrollY)
       );
 
       const land = () => {
