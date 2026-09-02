@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Cormorant_Garamond, IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
+import { site } from "@/content/site";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -25,10 +26,40 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400"],
 });
 
+const PRODUCTION_URL = "https://www.blackswanstudents.com";
+
 export const metadata: Metadata = {
-  title: "Black Swan Student Society",
-  description:
-    "A student society at Bocconi University, Milan, working on prediction markets: forecasting, calibration and the pricing of uncertainty.",
+  // Crawlers cannot resolve relative paths, so this makes the OG image URL
+  // absolute. Without it the link preview finds nothing.
+  metadataBase: new URL(PRODUCTION_URL),
+  title: {
+    default: site.name,
+    template: `%s, ${site.name}`,
+  },
+  // Sourced from the hero so the preview and the page cannot drift apart.
+  description: site.hero.line,
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: site.name,
+    description: site.hero.line,
+    url: PRODUCTION_URL,
+    locale: "en_GB",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: `${site.name}, ${site.university}, ${site.city}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.hero.line,
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({

@@ -8,7 +8,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Board, Black Swan Student Society",
+  title: "The board",
   description:
     "The thirteen people who run Black Swan Student Society: a president and vice president, a head of investment research, heads for each of the five divisions, and heads of media and operations.",
 };

@@ -14,7 +14,11 @@ export function NavLink({
   onClick?: () => void;
   children: React.ReactNode;
 }) {
-  if (href.includes("#")) {
+  // next/link is for internal routes only. Hash targets stay plain anchors so
+  // SmoothScroll owns them, and mailto or external links must never be routed.
+  const isInternalRoute = href.startsWith("/") && !href.includes("#");
+
+  if (!isInternalRoute) {
     return (
       <a href={href} className={className} onClick={onClick}>
         {children}

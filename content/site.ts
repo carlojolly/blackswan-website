@@ -1,5 +1,7 @@
 /** Every string the site renders lives here or in a sibling content file. */
 
+const EMAIL = "as.blackswan@unibocconi.it";
+
 export const site = {
   name: "Black Swan Student Society",
   shortName: "Black Swan",
@@ -82,7 +84,7 @@ export const site = {
       {
         label: "Email",
         icon: "mail",
-        href: "mailto:as.blackswan@unibocconi.it",
+        href: `mailto:${EMAIL}`,
       },
     ],
     copyright: "© 2026 Black Swan Student Society",
@@ -94,5 +96,5 @@ export const site = {
     { label: "Board", href: "/board" },
   ],
 
-  contact: { label: "Contact us", href: "/#contact" },
+  contact: { label: "Contact us", href: `mailto:${EMAIL}` },
 } as const;
