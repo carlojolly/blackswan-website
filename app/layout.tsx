@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Cormorant_Garamond, IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -40,7 +41,10 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${instrumentSans.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-ground-dark">{children}</body>
+      <body className="min-h-full flex flex-col bg-ground-dark">
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
