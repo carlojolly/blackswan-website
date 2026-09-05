@@ -40,6 +40,27 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+
+            {/* The one action in this column, and it goes to the form itself,
+                not to the section about it. Inert until the form exists. */}
+            {site.applicationForm ? (
+              <a
+                href={site.applicationForm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center gap-3 border border-rule-strong px-4 py-2.5 font-mono text-label uppercase text-accent transition-micro hover:border-accent hover:text-heading"
+              >
+                {f.applyLabel}
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            ) : (
+              <p
+                aria-disabled="true"
+                className="mt-7 inline-flex cursor-not-allowed items-center border border-rule-strong px-4 py-2.5 font-mono text-label uppercase text-muted"
+              >
+                {f.applyLabel}
+              </p>
+            )}
           </nav>
 
           <div className="lg:col-span-3">

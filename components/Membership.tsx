@@ -40,8 +40,7 @@ export function Membership() {
 
       {/* Applications, its own block, and the target of the hero link. Top
           padding rather than margin so scrolling to it leaves the card clear
-          of the nav. The right cell is the form slot: a Tally or Typeform
-          embed replaces its contents without touching the layout. */}
+          of the nav. */}
       <Shell id="apply" className="pt-28">
         <Reveal>
           <div className="border border-rule bg-surface">
@@ -56,18 +55,52 @@ export function Membership() {
                 <p className="mt-5 max-w-measure text-sm text-muted">
                   {m.applicationsNote}
                 </p>
+
+                {/* Form slot: the live link, or a Tally or Typeform embed,
+                    replaces this without touching the layout. */}
+                <div data-slot="application-form" className="mt-10">
+                  {site.applicationForm ? (
+                    <a
+                      href={site.applicationForm}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 border border-rule-strong px-7 py-3.5 font-mono text-label uppercase text-accent transition-micro hover:border-accent hover:text-heading"
+                    >
+                      {m.applyLabel}
+                      <span aria-hidden="true">&rarr;</span>
+                    </a>
+                  ) : (
+                    <p
+                      aria-disabled="true"
+                      className="inline-flex cursor-not-allowed items-center border border-rule-strong px-7 py-3.5 font-mono text-label uppercase text-muted"
+                    >
+                      {m.formState}
+                    </p>
+                  )}
+                </div>
               </div>
 
-              <div
-                data-slot="application-form"
-                className="flex min-h-[16rem] items-center justify-center p-10"
-              >
-                <p
-                  aria-disabled="true"
-                  className="inline-flex cursor-not-allowed items-center border border-rule-strong px-7 py-3.5 font-mono text-label uppercase text-muted"
-                >
-                  {m.formState}
+              <div className="p-10 lg:p-14">
+                <p className="font-mono text-label uppercase text-muted">
+                  {m.timelineTitle}
                 </p>
+                {/* Dates in the accent, so the column scans as a schedule
+                    rather than as prose. */}
+                <ol className="mt-8">
+                  {m.timeline.map((step, i) => (
+                    <li
+                      key={step.label}
+                      className={`grid items-baseline gap-x-6 gap-y-1 py-4 sm:grid-cols-[auto_1fr] ${
+                        i === 0 ? "pt-0" : "border-t border-rule"
+                      }`}
+                    >
+                      <span className="font-mono text-label uppercase text-accent">
+                        {step.date}
+                      </span>
+                      <span className="text-sm text-copy">{step.label}</span>
+                    </li>
+                  ))}
+                </ol>
               </div>
             </div>
           </div>

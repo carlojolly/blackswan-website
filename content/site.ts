@@ -2,6 +2,11 @@
 
 const EMAIL = "as.blackswan@unibocconi.it";
 
+/** The live application form. Null until it exists, which is what puts the
+    footer button and the slot in the applications block into their waiting
+    state. Setting it here turns both into real links. */
+const APPLICATION_FORM: string | null = null;
+
 export const site = {
   name: "Black Swan Student Society",
   shortName: "Black Swan",
@@ -63,10 +68,19 @@ export const site = {
       },
     ],
     applicationsTitle: "Applications",
-    applicationsLine: "Applications open in September and February",
+    applicationsLine: "Applications are now open",
     applicationsNote:
-      "We recruit twice a year. The form opens here when applications do.",
+      "The form asks for your CV and a short response. Applications are reviewed on a rolling basis, and shortlisted candidates will be invited to an interview.",
+    applyLabel: "Apply here",
     formState: "Opens soon",
+    timelineTitle: "Timeline",
+    timeline: [
+      { date: "6 September", label: "Applications open" },
+      { date: "TBD", label: "Networking aperitivo" },
+      { date: "24 September", label: "Associations on Display" },
+      { date: "27 September", label: "Applications close" },
+      { date: "5\u20136 October", label: "Final decisions" },
+    ],
   },
 
   board: {
@@ -77,6 +91,10 @@ export const site = {
   footer: {
     address: "Bocconi University, Milan",
     sectionsTitle: "Sections",
+    /** Closes the sections column as the one action in it, rather than
+        joining the nav, which stays to the three destinations. The
+        destination is the form itself, not the section about it. */
+    applyLabel: "Apply here",
     elsewhereTitle: "Elsewhere",
     social: [
       {
@@ -105,4 +123,6 @@ export const site = {
   ],
 
   contact: { label: "Contact us", href: `mailto:${EMAIL}` },
+
+  applicationForm: APPLICATION_FORM,
 } as const;
