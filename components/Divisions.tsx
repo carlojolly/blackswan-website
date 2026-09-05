@@ -49,14 +49,16 @@ export function Divisions() {
 
                   {/* Same shape as the section rules and the hero strip, so
                       the signature repeats rather than a new pattern arriving. */}
-                  <div className="mt-8 flex items-baseline justify-between gap-6 border-t border-rule pt-4">
-                    <span className="text-sm text-copy">
-                      {division.example.question}
-                    </span>
-                    <span className="font-mono text-num text-accent shrink-0">
-                      {division.example.probability}
-                    </span>
-                  </div>
+                  {division.example && (
+                    <div className="mt-8 flex items-baseline justify-between gap-6 border-t border-rule pt-4">
+                      <span className="text-sm text-copy">
+                        {division.example.question}
+                      </span>
+                      <span className="font-mono text-num text-accent shrink-0">
+                        {division.example.probability}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </article>
             </Reveal>

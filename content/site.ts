@@ -41,7 +41,7 @@ export const site = {
   divisionsIntro: {
     eyebrow: "Divisions",
     heading: "Our Divisions",
-    line: "Each division owns a set of questions. The method underneath them does not change: state a probability, write the reasoning, take the score.",
+    line: "Three of the five are investment research, each pricing its own domain and pitching what it finds. The other two work on the markets themselves: how they behave, and the models underneath.",
     exampleLabel: "Example market",
     exampleNote: "Example markets are illustrative",
   },

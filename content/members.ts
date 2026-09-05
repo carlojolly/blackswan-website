@@ -85,10 +85,10 @@ export const board: BoardMember[] = [
     photo: null,
   },
   {
-    id: "head-academic-research",
+    id: "head-market-studies",
     index: "08",
     group: "divisions",
-    role: "Head of Academic Research",
+    role: "Head of Market Studies",
     name: "Can Deniz",
     photo: null,
   },
