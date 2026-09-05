@@ -184,9 +184,10 @@ body {
    ============================================================ */
 
 /* Anchor targets receive focus after a scroll, but only keyboard users
-   should see a ring on them. */
-section:focus,
-footer:focus {
+   should see a ring on them. SmoothScroll marks whatever it lands on with
+   tabindex="-1", so match that rather than the element name: the
+   applications block is a div, and named selectors let its ring through. */
+[tabindex="-1"]:focus {
   outline: none;
 }
 
