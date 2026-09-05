@@ -71,7 +71,7 @@ export const site = {
 
   board: {
     heading: "The Board",
-    note: "Photographs are on the way. Until then each seat carries its own calibration curve.",
+    note: "Photographs are on the way.",
   },
 
   footer: {
