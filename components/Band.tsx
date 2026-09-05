@@ -27,14 +27,16 @@ export function Band({
 }
 
 export function Shell({
+  id,
   className = "",
   children,
 }: {
+  id?: string;
   className?: string;
   children: React.ReactNode;
 }) {
   return (
-    <div className={`mx-auto w-full max-w-shell px-gutter ${className}`}>
+    <div id={id} className={`mx-auto w-full max-w-shell px-gutter ${className}`}>
       {children}
     </div>
   );

@@ -15,33 +15,34 @@ export function Membership() {
 
         <Reveal className="mt-16 max-w-narrow">
           <h2 className="font-display text-d2 text-heading">{m.heading}</h2>
-          <p className="mt-6 max-w-measure text-copy text-copy">{m.line}</p>
           <p className="mt-8 font-mono text-num text-accent">
             {societySize} members across five divisions
           </p>
         </Reveal>
 
-        {/* What members do */}
+        {/* What you get */}
         <div className="mt-20 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-          {m.activities.map((activity, i) => (
+          {m.benefits.map((benefit, i) => (
             <Reveal
-              key={activity.title}
+              key={benefit.title}
               delay={stagger(i)}
               className="border-t border-rule pt-5"
             >
               <h3 className="font-display text-d4 text-heading">
-                {activity.title}
+                {benefit.title}
               </h3>
-              <p className="mt-3 text-sm text-muted">{activity.body}</p>
+              <p className="mt-3 text-sm text-muted">{benefit.body}</p>
             </Reveal>
           ))}
         </div>
 
       </Shell>
 
-      {/* Applications, its own block. The right cell is the form slot: a Tally
-          or Typeform embed replaces its contents without touching the layout. */}
-      <Shell className="mt-28">
+      {/* Applications, its own block, and the target of the hero link. Top
+          padding rather than margin so scrolling to it leaves the card clear
+          of the nav. The right cell is the form slot: a Tally or Typeform
+          embed replaces its contents without touching the layout. */}
+      <Shell id="apply" className="pt-28">
         <Reveal>
           <div className="border border-rule bg-surface">
             <div className="grid lg:grid-cols-[1.15fr_1fr]">

@@ -8,10 +8,20 @@ export const site = {
   university: "Bocconi University",
   city: "Milan",
 
+  /** Canonical origin. Crawlers cannot resolve relative paths, so the
+      metadata base, the sitemap and the robots file all read it from here. */
+  url: "https://www.blackswanstudents.com",
+
+  /** The <title> only, never rendered on the page: the hero still carries the
+      name on its own. Search results need to say what the society is and
+      where, which the name alone does not. Under 60 characters so the part
+      that does that work survives truncation in the results page. */
+  metaTitle: "Black Swan Student Society — Prediction Markets at Bocconi",
+
   hero: {
     heading: "Black Swan Student Society",
     line: "A student association at Bocconi University in Milan, built around prediction markets and probabilistic thinking.",
-    link: { label: "How membership works", href: "#membership" },
+    link: { label: "Apply here", href: "#apply" },
   },
 
   origin: {
@@ -25,7 +35,7 @@ export const site = {
 
   divisionsIntro: {
     eyebrow: "Divisions",
-    heading: "Five divisions, one method",
+    heading: "Our Divisions",
     line: "Each division owns a set of questions. The method underneath them does not change: state a probability, write the reasoning, take the score.",
     exampleLabel: "Example market",
     exampleNote: "Example markets are illustrative",
@@ -33,24 +43,23 @@ export const site = {
 
   membership: {
     eyebrow: "Membership",
-    heading: "What members actually do",
-    line: "Membership is by application. We keep it small so that everyone reads everyone else's work, and there is no seniority in a forecast.",
-    activities: [
+    heading: "What you get as a member",
+    benefits: [
       {
-        title: "Weekly forecasts",
-        body: "Every member publishes a probability each week with the reasoning written underneath it.",
+        title: "Career Support",
+        body: "Members in their second and third year help with internships, CVs and recruiting, and with whatever else you are stuck on.",
       },
       {
-        title: "Market mechanics",
-        body: "We work through how these markets function, from how a contract resolves to where the price gets it wrong.",
+        title: "The Community",
+        body: "Events with people who trade, research and build for a living, and a drink together often enough that you know everyone in the room.",
       },
       {
-        title: "Research notes",
-        body: "When a question deserves more than a number, the division writes it up and circulates it.",
+        title: "Output",
+        body: "Research notes and market reports go out under your name, so there is real work to point at by the end of the year.",
       },
       {
-        title: "Competitions",
-        body: "We score and rank every member's calls, so who forecasts best is a matter of record rather than opinion.",
+        title: "You are early",
+        body: "We are in the building stage, so what the society becomes over the next two years is largely down to the people joining now.",
       },
     ],
     applicationsTitle: "Applications",
@@ -61,8 +70,7 @@ export const site = {
   },
 
   board: {
-    heading: "The board",
-    line: "The society is run by a board of thirteen: a president and vice president, a head of investment research, heads for each division, and heads of media and operations.",
+    heading: "The Board",
     note: "Photographs are on the way. Until then each seat carries its own calibration curve.",
   },
 

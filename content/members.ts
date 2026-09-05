@@ -7,7 +7,7 @@ export type BoardGroup = { id: BoardGroupId; title: string };
 export const boardGroups: BoardGroup[] = [
   { id: "leadership", title: "Leadership" },
   { id: "divisions", title: "Divisions" },
-  { id: "operations", title: "Media & Operations" },
+  { id: "operations", title: "Media, Operations & Recruitment" },
 ];
 
 export type BoardMember = {
@@ -21,9 +21,10 @@ export type BoardMember = {
   photo: string | null;
 };
 
-/** Thirteen seats: president, vice president, a head of investment research,
-    the division heads, then the media and operations functions. Economics & Politics and Business & Finance each run
-    with two co-heads, the other two divisions with one.
+/** Fourteen seats: president, vice president, a head of investment research,
+    the division heads, then the media, operations and recruitment functions.
+    Business & Finance runs with two co-heads, the other four divisions with
+    one.
     Each id also seeds that seat's placeholder curve, so they must stay unique.
     Names stay as placeholders until the roles are confirmed. */
 export const board: BoardMember[] = [
@@ -52,24 +53,16 @@ export const board: BoardMember[] = [
     photo: null,
   },
   {
-    id: "co-head-economics-politics-a",
+    id: "head-economics-politics",
     index: "04",
     group: "divisions",
-    role: "Co-Head of Economics & Politics",
-    name: "Adrien Tsonev",
-    photo: null,
-  },
-  {
-    id: "co-head-economics-politics-b",
-    index: "05",
-    group: "divisions",
-    role: "Co-Head of Economics & Politics",
-    name: "Harry Downey",
+    role: "Head of Economics & Politics",
+    name: "Carlo Giolla",
     photo: null,
   },
   {
     id: "co-head-business-finance-a",
-    index: "06",
+    index: "05",
     group: "divisions",
     role: "Co-Head of Business & Finance",
     name: "Niklas Ondruch",
@@ -77,7 +70,7 @@ export const board: BoardMember[] = [
   },
   {
     id: "co-head-business-finance-b",
-    index: "07",
+    index: "06",
     group: "divisions",
     role: "Co-Head of Business & Finance",
     name: "Loyd Hegarty",
@@ -85,15 +78,15 @@ export const board: BoardMember[] = [
   },
   {
     id: "head-cross-domain",
-    index: "08",
+    index: "07",
     group: "divisions",
     role: "Head of Cross-Domain",
-    name: "Carlo Giolla",
+    name: "Harry Downey",
     photo: null,
   },
   {
     id: "head-academic-research",
-    index: "09",
+    index: "08",
     group: "divisions",
     role: "Head of Academic Research",
     name: "Can Deniz",
@@ -101,7 +94,7 @@ export const board: BoardMember[] = [
   },
   {
     id: "head-algorithm-development",
-    index: "10",
+    index: "09",
     group: "divisions",
     role: "Head of Algorithm Development",
     name: "Thomas Tumini",
@@ -109,7 +102,7 @@ export const board: BoardMember[] = [
   },
   {
     id: "co-head-media-a",
-    index: "11",
+    index: "10",
     group: "operations",
     role: "Co-Head of Media & News",
     name: "Maria Mateescu",
@@ -117,7 +110,7 @@ export const board: BoardMember[] = [
   },
   {
     id: "co-head-media-b",
-    index: "12",
+    index: "11",
     group: "operations",
     role: "Co-Head of Media & News",
     name: "Sofia Damean",
@@ -125,10 +118,26 @@ export const board: BoardMember[] = [
   },
   {
     id: "head-operations-events",
-    index: "13",
+    index: "12",
     group: "operations",
     role: "Head of Operations & Events",
     name: "Matteo Mascaretti",
+    photo: null,
+  },
+  {
+    id: "co-head-recruitment-a",
+    index: "13",
+    group: "operations",
+    role: "Co-Head of Recruitment",
+    name: "Adrien Tsonev",
+    photo: null,
+  },
+  {
+    id: "co-head-recruitment-b",
+    index: "14",
+    group: "operations",
+    role: "Co-Head of Recruitment",
+    name: "James Moser",
     photo: null,
   },
 ];

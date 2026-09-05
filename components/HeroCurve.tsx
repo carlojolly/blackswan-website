@@ -15,10 +15,7 @@ export function HeroCurve() {
     >
       <AmbientCurve mode="drift" />
 
-      <div className="pointer-events-none absolute inset-0 mx-auto flex w-full max-w-shell items-end justify-between px-gutter pb-4">
-        <span className="font-mono text-label uppercase text-muted">
-          Illustrative, not a live market
-        </span>
+      <div className="pointer-events-none absolute inset-0 mx-auto flex w-full max-w-shell items-end justify-end px-gutter pb-4">
         <CurveReadout
           seriesKey={HERO_SERIES}
           steps={HERO_STEPS}

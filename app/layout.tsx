@@ -26,14 +26,17 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400"],
 });
 
-const PRODUCTION_URL = "https://www.blackswanstudents.com";
+const PRODUCTION_URL = site.url;
 
 export const metadata: Metadata = {
   // Crawlers cannot resolve relative paths, so this makes the OG image URL
   // absolute. Without it the link preview finds nothing.
   metadataBase: new URL(PRODUCTION_URL),
   title: {
-    default: site.name,
+    // Longer than the name: the tab and the search result carry what the
+    // society is, while OG and Twitter below stay on the plain name, since
+    // those previews reach people who already know it.
+    default: site.metaTitle,
     template: `%s, ${site.name}`,
   },
   // Sourced from the hero so the preview and the page cannot drift apart.
