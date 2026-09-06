@@ -5,7 +5,8 @@ const EMAIL = "as.blackswan@unibocconi.it";
 /** The live application form. Null until it exists, which is what puts the
     footer button and the slot in the applications block into their waiting
     state. Setting it here turns both into real links. */
-const APPLICATION_FORM: string | null = null;
+const APPLICATION_FORM: string | null =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfdLTI0YRhmvuHZuzgk0jhGNZumQszYa7u8TMBvUwCEln7jdw/viewform";
 
 export const site = {
   name: "Black Swan Student Society",
