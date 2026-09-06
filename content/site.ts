@@ -123,7 +123,10 @@ export const site = {
     { label: "Board", href: "/board" },
   ],
 
-  contact: { label: "Contact us", href: `mailto:${EMAIL}` },
+  /** The nav's one action. Shorter than the other two apply buttons: the bar
+      is tight, and the word alone is unambiguous up there. Email is still
+      reachable from the footer. */
+  navApplyLabel: "Apply",
 
   applicationForm: APPLICATION_FORM,
 } as const;

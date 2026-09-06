@@ -50,12 +50,23 @@ export function Nav() {
               </li>
             ))}
             <li>
-              <NavLink
-                href={site.contact.href}
-                className="nav-link inline-flex items-center border border-rule-strong px-4 py-2.5 font-mono text-label uppercase text-muted transition-micro hover:border-accent hover:text-heading"
-              >
-                {site.contact.label}
-              </NavLink>
+              {site.applicationForm ? (
+                <a
+                  href={site.applicationForm}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nav-link inline-flex items-center border border-rule-strong px-4 py-2.5 font-mono text-label uppercase text-accent transition-micro hover:border-accent hover:text-heading"
+                >
+                  {site.navApplyLabel}
+                </a>
+              ) : (
+                <p
+                  aria-disabled="true"
+                  className="inline-flex cursor-not-allowed items-center border border-rule-strong px-4 py-2.5 font-mono text-label uppercase text-muted"
+                >
+                  {site.navApplyLabel}
+                </p>
+              )}
             </li>
           </ul>
 
@@ -88,15 +99,19 @@ export function Nav() {
                 </NavLink>
               </li>
             ))}
-            <li>
-              <NavLink
-                href={site.contact.href}
-                onClick={() => setOpen(false)}
-                className="block py-4 font-display text-d4 text-heading"
-              >
-                {site.contact.label}
-              </NavLink>
-            </li>
+            {site.applicationForm && (
+              <li>
+                <a
+                  href={site.applicationForm}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="block py-4 font-display text-d4 text-accent"
+                >
+                  {site.navApplyLabel}
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       )}
