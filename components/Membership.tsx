@@ -64,10 +64,12 @@ export function Membership() {
                       href={site.applicationForm}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 border border-rule-strong px-7 py-3.5 font-mono text-label uppercase text-accent transition-micro hover:border-accent hover:text-heading"
+                      className="beam-button inline-flex font-mono text-label uppercase text-accent transition-micro hover:text-heading"
                     >
-                      {m.applyLabel}
-                      <span aria-hidden="true">&rarr;</span>
+                      <span className="beam-button__face">
+                        {m.applyLabel}
+                        <span aria-hidden="true">&rarr;</span>
+                      </span>
                     </a>
                   ) : (
                     <p

@@ -226,6 +226,113 @@ body {
 .band-paper.grain::after { opacity: 0.028; mix-blend-mode: multiply; }
 
 /* ============================================================
+   Route transitions, home to board and back
+   ============================================================ */
+
+/* Asymmetric on purpose: the outgoing page leaves quickly so it stops
+   competing for attention, and the incoming one arrives more slowly, its
+   fade waiting for the exit to finish. */
+:root {
+  --duration-page-exit: 140ms;
+  --duration-page-enter: 220ms;
+  --duration-page-move: 380ms;
+}
+
+::view-transition-old(.page-exit) {
+  animation: var(--duration-page-exit) var(--ease-standard) both page-fade
+    reverse;
+}
+
+::view-transition-new(.page-enter) {
+  animation:
+    var(--duration-page-enter) var(--ease-exit) var(--duration-page-exit) both
+      page-fade,
+    var(--duration-page-move) var(--ease-exit) both page-rise;
+}
+
+@keyframes page-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes page-rise {
+  from { transform: translate3d(0, 8px, 0); }
+  to { transform: none; }
+}
+
+/* Same bargain the rest of the site strikes: the fade stays, the movement
+   goes. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(.page-enter) {
+    animation: var(--duration-page-enter) var(--ease-exit)
+      var(--duration-page-exit) both page-fade;
+  }
+}
+
+/* ============================================================
+   Apply button, a light running its perimeter
+   ============================================================ */
+
+/* A conic gradient rotating behind an opaque face: the face covers all but a
+   one pixel rim, so what shows is a dim border with a bright arc travelling
+   round it. Rotating an element rather than animating an angle custom
+   property keeps this working without @property support, where the beam
+   would otherwise sit frozen on one edge and read as a bug. */
+.beam-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.beam-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* Square at twice the width always covers the box as it turns, since the
+     button is never taller than it is wide. */
+  width: 200%;
+  aspect-ratio: 1;
+  /* The lit arc is kept narrow on purpose. Spread over more of the circle it
+     projects onto a button this wide as a smear along one edge rather than a
+     light with a position, which is the whole effect. */
+  background: conic-gradient(
+    from 0deg,
+    var(--c-rule-strong) 0 86%,
+    var(--c-accent) 93%,
+    #ffffff 97%,
+    var(--c-rule-strong) 100%
+  );
+  animation: beam-spin 3s linear infinite;
+  will-change: transform;
+}
+
+@keyframes beam-spin {
+  from { transform: translate(-50%, -50%) rotate(0turn); }
+  to { transform: translate(-50%, -50%) rotate(1turn); }
+}
+
+/* The rim is whatever the face does not cover. */
+.beam-button__face {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1px;
+  background: var(--c-surface);
+  padding: 0.875rem 1.75rem;
+}
+
+/* The whole point of the setting: no perpetual motion, just the border. */
+@media (prefers-reduced-motion: reduce) {
+  .beam-button::before {
+    animation: none;
+    background: var(--c-rule-strong);
+  }
+}
+
+/* ============================================================
    Ambient hero curve, the only continuous motion on the site
    ============================================================ */
 
