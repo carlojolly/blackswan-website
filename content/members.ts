@@ -21,10 +21,10 @@ export type BoardMember = {
   photo: string | null;
 };
 
-/** Fourteen seats: president, vice president, a head of investment research,
+/** Fifteen seats: president, vice president, a head of investment research,
     the division heads, then the media, operations and recruitment functions.
-    Business & Finance runs with two co-heads, the other four divisions with
-    one.
+    Business & Finance and Market Studies each run with two co-heads, the
+    other three divisions with one.
     Each id also seeds that seat's placeholder curve, so they must stay unique.
     Names stay as placeholders until the roles are confirmed. */
 export const board: BoardMember[] = [
@@ -85,16 +85,24 @@ export const board: BoardMember[] = [
     photo: null,
   },
   {
-    id: "head-market-studies",
+    id: "co-head-market-studies-a",
     index: "08",
     group: "divisions",
-    role: "Head of Market Studies",
+    role: "Co-Head of Market Studies",
     name: "Can Deniz",
     photo: null,
   },
   {
-    id: "head-algorithm-development",
+    id: "co-head-market-studies-b",
     index: "09",
+    group: "divisions",
+    role: "Co-Head of Market Studies",
+    name: "Hrishikesh Subhash",
+    photo: null,
+  },
+  {
+    id: "head-algorithm-development",
+    index: "10",
     group: "divisions",
     role: "Head of Algorithm Development",
     name: "Thomas Tumini",
@@ -102,7 +110,7 @@ export const board: BoardMember[] = [
   },
   {
     id: "co-head-media-a",
-    index: "10",
+    index: "11",
     group: "operations",
     role: "Co-Head of Media & News",
     name: "Maria Mateescu",
@@ -110,7 +118,7 @@ export const board: BoardMember[] = [
   },
   {
     id: "co-head-media-b",
-    index: "11",
+    index: "12",
     group: "operations",
     role: "Co-Head of Media & News",
     name: "Sofia Damean",
@@ -118,7 +126,7 @@ export const board: BoardMember[] = [
   },
   {
     id: "head-operations-events",
-    index: "12",
+    index: "13",
     group: "operations",
     role: "Head of Operations & Events",
     name: "Matteo Mascaretti",
@@ -126,7 +134,7 @@ export const board: BoardMember[] = [
   },
   {
     id: "co-head-recruitment-a",
-    index: "13",
+    index: "14",
     group: "operations",
     role: "Co-Head of Recruitment",
     name: "Adrien Tsonev",
@@ -134,7 +142,7 @@ export const board: BoardMember[] = [
   },
   {
     id: "co-head-recruitment-b",
-    index: "14",
+    index: "15",
     group: "operations",
     role: "Co-Head of Recruitment",
     name: "James Moser",

@@ -10,7 +10,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "The Board",
   description:
-    "The fourteen people who run Black Swan Student Society: a president and vice president, a head of investment research, heads for each of the five divisions, and heads of media, operations and recruitment.",
+    "The fifteen people who run Black Swan Student Society: a president and vice president, a head of investment research, heads for each of the five divisions, and heads of media, operations and recruitment.",
 };
 
 export default function BoardPage() {
